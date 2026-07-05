@@ -3,7 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Interactive sorting algorithm visualizer built with React, TypeScript, and Canvas.",
+  "description": "A polished interactive sorting algorithm visualizer built with React, TypeScript, and Canvas.",
+  "keywords": [
+    "sorting",
+    "visualizer",
+    "react",
+    "typescript",
+    "canvas",
+    "algorithms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerlb44-tech/fdsed.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

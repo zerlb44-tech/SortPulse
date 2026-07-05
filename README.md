@@ -1,110 +1,125 @@
-# sortlab — Interactive Sorting Algorithm Visualizer
+# sortlab
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
-[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+A polished, interactive sorting algorithm visualizer built with React, TypeScript, Tailwind CSS, and Canvas.
 
-A canvas-based visualizer for comparing how classic sorting algorithms behave step by step: **Bubble Sort**, **Merge Sort**, **Quick Sort**, and **Heap Sort**.
+[![Live demo](https://img.shields.io/badge/live-demo-7c8cff?style=for-the-badge)](https://github.com/zerlb44-tech/fdsed)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3ddc97?style=for-the-badge)](LICENSE)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
 
-![demo placeholder](docs/demo.gif)
-> Replace `docs/demo.gif` with a real screen recording of the app before publishing.
+## Overview
 
-## Features
+sortlab turns classic sorting algorithms into a visual story. Each algorithm emits real step data, and the UI renders those steps on a canvas with color-coded states, subtle sound feedback, and a responsive interface that still feels good on small screens.
 
-- 🎛️ Play / Pause / Step / Reset / Shuffle controls
-- 🎚️ Adjustable array size (5–150 elements) and playback speed
-- 🎨 Smooth canvas rendering with color-coded comparisons, swaps, pivots, and sorted state
-- 🌗 Dark / light mode toggle (persisted to `localStorage`)
-- 📊 Live comparison and swap counters, plus Big-O complexity reference per algorithm
-- 📱 Fully responsive, down to small mobile screens
-- ♿ Respects `prefers-reduced-motion`
+The current build includes:
 
-## Tech Stack
+- Bubble Sort
+- Merge Sort
+- Quick Sort
+- Heap Sort
 
-- [React 18](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
-- [Vite](https://vitejs.dev) for dev server and bundling
-- [Tailwind CSS](https://tailwindcss.com) for styling
-- [lucide-react](https://lucide.dev) for icons
-- Native `<canvas>` for rendering — no charting library
+## Why this project stands out
+
+- Real algorithm steps, not pre-recorded animation
+- Web Audio feedback for compare, swap, pivot, and completion states
+- Responsive layout with a more intentional visual style
+- Dark and light theme support
+- Canvas rendering that keeps the interface lightweight
+- Clear complexity stats for each algorithm
+
+## Demo
+
+Add a short GIF or MP4 here when you publish the project:
+
+`docs/demo.gif`
+
+## Screenshots
+
+Recommended assets to add before promoting the repo:
+
+- `docs/demo.gif` or `docs/demo.mp4`
+- `docs/screenshot-dark.png`
+- `docs/screenshot-light.png`
 
 ## Getting Started
 
-### Prerequisites
+### Requirements
 
-- Node.js 18+
-- npm 9+ (or pnpm / yarn, adjust commands accordingly)
+- Node.js 18 or newer
+- npm 9 or newer
 
-### Install & run
+### Install
 
 ```bash
 npm install
+```
+
+### Development
+
+```bash
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
-
-### Build for production
+### Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Output is written to `dist/`.
+## Controls
+
+- Play and pause the animation
+- Step through the algorithm manually
+- Shuffle the array
+- Change array size and playback speed
+- Toggle sound
+- Switch between light and dark modes
 
 ## Project Structure
 
-```
-algo-visualizer/
-├── src/
-│   ├── algorithms/        # Generator-based sorting implementations
-│   │   ├── bubbleSort.ts
-│   │   ├── mergeSort.ts
-│   │   ├── quickSort.ts
-│   │   ├── heapSort.ts
-│   │   └── index.ts       # Registry + complexity metadata
-│   ├── components/
-│   │   ├── Visualizer.tsx       # Canvas renderer
-│   │   ├── Controls.tsx         # Playback + sliders
-│   │   ├── AlgorithmSelector.tsx
-│   │   ├── StatsPanel.tsx
-│   │   └── Legend.tsx
-│   ├── hooks/
-│   │   ├── useSort.ts      # Drives generator playback with setTimeout
-│   │   └── useDarkMode.ts
-│   ├── types/index.ts
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── index.html
-├── tailwind.config.js
-├── vite.config.ts
-└── package.json
+```text
+src/
+  algorithms/        Generator-based sorting implementations
+  components/        UI building blocks
+  hooks/             Playback, audio, and theme logic
+  types/             Shared TypeScript types
+  App.tsx            Main composition layer
 ```
 
-## How it works
+## Tech Stack
 
-Each algorithm is implemented as a JavaScript **generator function** that yields a `SortStep` (a snapshot of the array plus which indices are being compared, swapped, or finalized) every time it would otherwise mutate state. The `useSort` hook pulls one step at a time on an interval controlled by the speed slider, so the same algorithm code powers both instant execution and the animated walkthrough — nothing is faked or pre-recorded.
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Native Canvas API
+- Web Audio API
 
-## Algorithms Included
+## SEO and Sharing
 
-| Algorithm | Best | Average | Worst | Space |
-|---|---|---|---|---|
-| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) |
-| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
-| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) |
-| Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) |
+The app now includes better page metadata and Open Graph-friendly assets so the GitHub repo and any deployed demo look more polished when shared.
+
+## Roadmap
+
+- Add a short narrated demo clip
+- Publish GitHub Pages deployment
+- Add more algorithms
+- Add shareable URLs for presets
+- Capture before/after performance screenshots for mobile
 
 ## Contributing
 
-Issues and pull requests are welcome. To add a new algorithm:
+Contributions are welcome.
 
-1. Create `src/algorithms/yourSort.ts` exporting a `SortGenerator`.
-2. Register it (and its complexity metadata) in `src/algorithms/index.ts`.
-3. It will automatically appear in the algorithm selector.
+If you want to add a new algorithm:
+
+1. Create a generator in `src/algorithms/`.
+2. Register it in `src/algorithms/index.ts`.
+3. Add its metadata to the same registry.
+4. The selector will pick it up automatically.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
