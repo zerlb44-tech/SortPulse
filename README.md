@@ -2,9 +2,9 @@
 
 A polished, interactive sorting algorithm visualizer built with React, TypeScript, Tailwind CSS, and Canvas.
 
-[![Live demo](https://img.shields.io/badge/live-demo-7c8cff?style=for-the-badge)](https://github.com/zerlb44-tech/fdsed)
+[![Live demo](https://img.shields.io/badge/live-demo-7c8cff?style=for-the-badge)](https://zerlb44-tech.github.io/SortPulse/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-3ddc97?style=for-the-badge)](LICENSE)
-[![CI](https://github.com/zerlb44-tech/fdsed/actions/workflows/ci.yml/badge.svg)](https://github.com/zerlb44-tech/fdsed/actions/workflows/ci.yml)
+[![CI](https://github.com/zerlb44-tech/SortPulse/actions/workflows/ci.yml/badge.svg)](https://github.com/zerlb44-tech/SortPulse/actions/workflows/ci.yml)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
@@ -109,6 +109,12 @@ src/
 ## SEO and Sharing
 
 The app now includes better page metadata and Open Graph-friendly assets so the GitHub repo and any deployed demo look more polished when shared.
+
+## Live demo
+
+Once GitHub Pages finishes deploying, the app will be available here:
+
+https://zerlb44-tech.github.io/SortPulse/
 
 ## Make the GitHub repo stronger
 
