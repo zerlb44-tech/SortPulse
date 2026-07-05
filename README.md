@@ -1,4 +1,4 @@
-# sortlab
+# SortPulse
 
 A polished, interactive sorting algorithm visualizer built with React, TypeScript, Tailwind CSS, and Canvas.
 
@@ -10,7 +10,7 @@ A polished, interactive sorting algorithm visualizer built with React, TypeScrip
 
 ## Overview
 
-sortlab turns classic sorting algorithms into a visual story. Each algorithm emits real step data, and the UI renders those steps on a canvas with color-coded states, subtle sound feedback, and a responsive interface that still feels good on small screens.
+SortPulse turns classic sorting algorithms into a visual story. Each algorithm emits real step data, and the UI renders those steps on a canvas with color-coded states, subtle sound feedback, and a responsive interface that still feels good on small screens.
 
 The current build includes:
 

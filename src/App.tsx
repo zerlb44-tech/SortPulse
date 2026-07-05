@@ -57,12 +57,12 @@ export default function App() {
       <header className="border-b border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent)] backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           <div className="flex items-baseline gap-2">
-            <span className="font-mono text-lg font-bold tracking-[0.18em] text-white uppercase">sortlab</span>
+            <span className="font-mono text-lg font-bold tracking-[0.18em] text-white uppercase">SortPulse</span>
             <span className="hidden text-xs text-slate-500 sm:inline">// sorting algorithm visualizer</span>
           </div>
           <div className="flex items-center gap-2">
             <a
-              href="https://github.com"
+              href="https://github.com/zerlb44-tech/fdsed"
               target="_blank"
               rel="noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-base-border text-slate-400 transition hover:border-signal-pivot hover:text-white"

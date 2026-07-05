@@ -11,7 +11,7 @@ interface UseAudioFeedbackResult {
   playStepSound: (step: SortStep) => void;
 }
 
-const STORAGE_KEY = 'sortlab.sound';
+const STORAGE_KEY = 'sortpulse.sound';
 const MIN_INTERVAL_MS: Record<SoundKind, number> = {
   compare: 90,
   swap: 70,
