@@ -1,3 +1,4 @@
+import type { LocaleContent } from '../content';
 import { Pause, Play, RotateCcw, Shuffle, SkipForward } from 'lucide-react';
 
 interface ControlsProps {
@@ -5,6 +6,7 @@ interface ControlsProps {
   isDone: boolean;
   speed: number;
   arraySize: number;
+  copy: LocaleContent['controls'];
   onPlayPause: () => void;
   onReset: () => void;
   onShuffle: () => void;
@@ -18,6 +20,7 @@ export function Controls({
   isDone,
   speed,
   arraySize,
+  copy,
   onPlayPause,
   onReset,
   onShuffle,
@@ -32,7 +35,7 @@ export function Controls({
           onClick={onPlayPause}
           disabled={isDone}
           className="flex h-11 w-11 items-center justify-center rounded-full bg-signal-pivot text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label={isPlaying ? 'Pause' : 'Play'}
+          aria-label={isPlaying ? copy.pause : copy.play}
         >
           {isPlaying ? <Pause size={18} /> : <Play size={18} />}
         </button>
@@ -40,21 +43,21 @@ export function Controls({
           onClick={onStep}
           disabled={isPlaying || isDone}
           className="flex h-11 w-11 items-center justify-center rounded-full border border-base-border text-slate-300 transition hover:border-signal-pivot hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label="Step forward"
+          aria-label={copy.step}
         >
           <SkipForward size={16} />
         </button>
         <button
           onClick={onReset}
           className="flex h-11 w-11 items-center justify-center rounded-full border border-base-border text-slate-300 transition hover:border-signal-pivot hover:text-white"
-          aria-label="Reset"
+          aria-label={copy.reset}
         >
           <RotateCcw size={16} />
         </button>
         <button
           onClick={onShuffle}
           className="flex h-11 w-11 items-center justify-center rounded-full border border-base-border text-slate-300 transition hover:border-signal-pivot hover:text-white"
-          aria-label="New random array"
+          aria-label={copy.shuffle}
         >
           <Shuffle size={16} />
         </button>
@@ -62,7 +65,7 @@ export function Controls({
 
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <label className="flex items-center gap-3 text-sm text-slate-400">
-          <span className="w-16 shrink-0 font-mono uppercase tracking-wide">Speed</span>
+          <span className="w-16 shrink-0 font-mono uppercase tracking-wide">{copy.speed}</span>
           <input
             type="range"
             min={1}
@@ -75,7 +78,7 @@ export function Controls({
         </label>
 
         <label className="flex items-center gap-3 text-sm text-slate-400">
-          <span className="w-16 shrink-0 font-mono uppercase tracking-wide">Size</span>
+          <span className="w-16 shrink-0 font-mono uppercase tracking-wide">{copy.size}</span>
           <input
             type="range"
             min={5}

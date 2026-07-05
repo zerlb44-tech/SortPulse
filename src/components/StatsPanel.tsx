@@ -1,3 +1,4 @@
+import type { LocaleContent } from '../content';
 import type { AlgorithmMeta } from '../types';
 
 interface StatsPanelProps {
@@ -5,19 +6,20 @@ interface StatsPanelProps {
   comparisons: number;
   swaps: number;
   isDone: boolean;
+  copy: LocaleContent['stats'];
 }
 
-export function StatsPanel({ meta, comparisons, swaps, isDone }: StatsPanelProps) {
+export function StatsPanel({ meta, comparisons, swaps, isDone, copy }: StatsPanelProps) {
   return (
-    <div className="grid grid-cols-2 gap-3 rounded-[1.5rem] border border-base-border bg-base-panel p-4 text-sm shadow-[0_18px_60px_rgba(0,0,0,0.16)] sm:grid-cols-4 sm:p-5">
-      <Stat label="Best" value={meta.best} />
-      <Stat label="Average" value={meta.average} />
-      <Stat label="Worst" value={meta.worst} />
-      <Stat label="Space" value={meta.space} />
-      <Stat label="Comparisons" value={comparisons.toLocaleString()} accent />
-      <Stat label="Swaps" value={swaps.toLocaleString()} accent />
-      <Stat label="Status" value={isDone ? 'Sorted' : 'Running'} accent={isDone} />
-      <div className="col-span-2 flex items-center text-xs leading-relaxed text-slate-500 sm:col-span-1">
+    <div className="grid gap-3 rounded-[1.5rem] border border-base-border bg-base-panel p-4 text-sm shadow-[0_18px_60px_rgba(0,0,0,0.16)] sm:grid-cols-2 sm:p-5 lg:grid-cols-4">
+      <Stat label={copy.best} value={meta.best} />
+      <Stat label={copy.average} value={meta.average} />
+      <Stat label={copy.worst} value={meta.worst} />
+      <Stat label={copy.space} value={meta.space} />
+      <Stat label={copy.comparisons} value={comparisons.toLocaleString()} accent />
+      <Stat label={copy.swaps} value={swaps.toLocaleString()} accent />
+      <Stat label={copy.status} value={isDone ? copy.sorted : copy.running} accent={isDone} />
+      <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4 text-xs leading-relaxed text-slate-500">
         {meta.description}
       </div>
     </div>

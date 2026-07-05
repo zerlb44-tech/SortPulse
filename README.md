@@ -19,6 +19,8 @@ The current build includes:
 - Merge Sort
 - Quick Sort
 - Heap Sort
+- English, Russian, and Chinese UI
+- GitHub Pages live demo
 
 ## Why this project stands out
 
@@ -26,6 +28,7 @@ The current build includes:
 - Web Audio feedback for compare, swap, pivot, and completion states
 - Responsive layout with a more intentional visual style
 - Dark and light theme support
+- Three-language UI switcher
 - Canvas rendering that keeps the interface lightweight
 - Clear complexity stats for each algorithm
 

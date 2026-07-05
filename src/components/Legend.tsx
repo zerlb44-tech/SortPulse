@@ -6,13 +6,17 @@ const ITEMS: { label: string; color: string }[] = [
   { label: 'Sorted', color: '#3ddc97' },
 ];
 
-export function Legend() {
+interface LegendProps {
+  labels: string[];
+}
+
+export function Legend({ labels }: LegendProps) {
   return (
     <div className="flex flex-wrap gap-4 text-xs text-slate-400">
-      {ITEMS.map((item) => (
+      {ITEMS.map((item, index) => (
         <div key={item.label} className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-sm shadow-[0_0_10px_currentColor]" style={{ backgroundColor: item.color }} />
-          {item.label}
+          {labels[index] ?? item.label}
         </div>
       ))}
     </div>

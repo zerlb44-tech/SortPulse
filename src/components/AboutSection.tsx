@@ -1,35 +1,13 @@
+import type { LocaleContent } from '../content';
 import { ArrowRight, Code2, Layers3, Rocket, Sparkles } from 'lucide-react';
 
-const highlights = [
-  {
-    title: 'One-command launch',
-    description: 'Run `npm start` after installing once, and the project opens as a local app.',
-    icon: Rocket,
-  },
-  {
-    title: 'Built to be shared',
-    description: 'The repo includes better metadata, icons, and social preview assets for GitHub.',
-    icon: Sparkles,
-  },
-  {
-    title: 'Real algorithm steps',
-    description: 'The visualizer is driven by generator steps, so what you see matches the logic.',
-    icon: Code2,
-  },
-  {
-    title: 'Product-style polish',
-    description: 'Animated surfaces, responsive layout, and subtle motion make the app feel finished.',
-    icon: Layers3,
-  },
-];
+const icons = [Rocket, Sparkles, Code2, Layers3];
 
-const stats = [
-  { value: '4', label: 'algorithms' },
-  { value: '100%', label: 'real steps' },
-  { value: '1', label: 'start command' },
-];
+interface AboutSectionProps {
+  copy: LocaleContent['about'];
+}
 
-export function AboutSection() {
+export function AboutSection({ copy }: AboutSectionProps) {
   return (
     <section
       id="about"
@@ -44,25 +22,23 @@ export function AboutSection() {
       <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="max-w-2xl">
           <div className="inline-flex rounded-full border border-signal-pivot/30 bg-signal-pivot/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-signal-pivot">
-            About this project
+            {copy.badge}
           </div>
           <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-            Designed like a product, not just a demo.
+            {copy.title}
           </h2>
           <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
-            SortPulse is built to look good on GitHub, feel smooth in the browser, and explain sorting
-            algorithms without making the interface feel heavy. The motion here is deliberate: soft,
-            readable, and helpful.
+            {copy.description}
           </p>
 
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-base-border bg-black/20 px-4 py-2 text-sm text-slate-300">
-            <span className="font-mono text-signal-sorted">npm start</span>
-            <span className="text-slate-500">Launches the app locally</span>
+            <span className="font-mono text-signal-sorted">{copy.commandLabel}</span>
+            <span className="text-slate-500">{copy.commandHint}</span>
             <ArrowRight size={16} className="text-signal-pivot" />
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {stats.map((stat, index) => (
+            {copy.stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className="rounded-2xl border border-base-border bg-white/[0.03] p-4 motion-safe:animate-fade-up"
@@ -76,8 +52,8 @@ export function AboutSection() {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {highlights.map((item, index) => {
-            const Icon = item.icon;
+          {copy.highlights.map((item, index) => {
+            const Icon = icons[index] ?? Rocket;
             return (
               <article
                 key={item.title}
