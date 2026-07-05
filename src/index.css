@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.dark {
+  --color-bg: #0b0f14;
+  --color-panel: #11161d;
+  --color-border: #1e2630;
+}
+
+.light {
+  --color-bg: #f5f6f8;
+  --color-panel: #ffffff;
+  --color-border: #dde1e7;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  html {
+    color-scheme: dark;
+    @apply antialiased;
+  }
+
+  body {
+    @apply font-sans;
+    background:
+      radial-gradient(circle at top, rgba(124, 140, 255, 0.12), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(61, 220, 151, 0.08), transparent 32%),
+      var(--color-bg);
+    color: #e5ecf6;
+  }
+
+  .light body {
+    background:
+      radial-gradient(circle at top, rgba(124, 140, 255, 0.1), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(61, 220, 151, 0.08), transparent 32%),
+      var(--color-bg);
+    color: #0f1722;
+  }
+
+  ::selection {
+    @apply bg-signal-pivot/40;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-base-border rounded-full;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
