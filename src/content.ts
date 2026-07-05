@@ -14,6 +14,7 @@ export interface LocaleContent {
     badge: string;
     title: string;
     description: string;
+    chips: string[];
     primaryCta: string;
     secondaryCta: string;
   };
@@ -114,13 +115,14 @@ export const locales: Record<Language, LocaleContent> = {
       soundOff: 'Enable sound',
       theme: 'Toggle theme',
     },
-    hero: {
-      badge: 'Audio + motion tuned for learning',
-      title: 'Watch sorting algorithms think.',
-      description:
-        'Step through Bubble, Merge, Quick, and Heap sort bar by bar. The motion is calm, the sounds are soft, and the layout is built to stay readable on desktop and mobile.',
+  hero: {
+    badge: 'Audio + motion tuned for learning',
+    title: 'Watch sorting algorithms think.',
+    description:
+        'Sort, hear, and understand every step. Bubble, Merge, Quick, and Heap sort are rendered with calm motion, soft audio, and a layout built to feel like a polished product instead of a classroom toy.',
+      chips: ['3 languages', 'GitHub Pages live', 'Soft audio cues', 'Mobile friendly'],
       primaryCta: 'Start with one command',
-      secondaryCta: 'No build noise, just a clean run',
+      secondaryCta: 'A clean demo with zero setup noise',
     },
     about: {
       badge: 'About this project',
@@ -199,9 +201,10 @@ export const locales: Record<Language, LocaleContent> = {
       badge: 'Звук + анимация для обучения',
       title: 'Смотри, как алгоритмы сортировки думают.',
       description:
-        'Пошагово проходи Bubble, Merge, Quick и Heap sort. Анимация спокойная, звук мягкий, а интерфейс остаётся читаемым и на компьютере, и на телефоне.',
+        'Сортируй, слушай и понимай каждый шаг. Bubble, Merge, Quick и Heap sort показаны мягкой анимацией, аккуратным звуком и интерфейсом, который выглядит как готовый продукт, а не учебный черновик.',
+      chips: ['3 языка', 'GitHub Pages live', 'Мягкий звук', 'Адаптивно для телефона'],
       primaryCta: 'Запуск в одну команду',
-      secondaryCta: 'Без лишнего шума, просто чистый старт',
+      secondaryCta: 'Чистая демка без лишней возни',
     },
     about: {
       badge: 'Об этом проекте',
@@ -286,9 +289,10 @@ export const locales: Record<Language, LocaleContent> = {
       badge: '声音 + 动效，专为学习而调校',
       title: '看排序算法“思考”。',
       description:
-        '逐步观察 Bubble、Merge、Quick 和 Heap 排序。动效更柔和，声音更克制，界面在桌面和手机上都保持清晰易读。',
+        '逐步观察 Bubble、Merge、Quick 和 Heap 排序。每一步都配有柔和动效和克制音效，界面像成品一样清晰，而不是像课堂演示。',
+      chips: ['三种语言', 'GitHub Pages 在线', '柔和音效', '移动端友好'],
       primaryCta: '一条命令启动',
-      secondaryCta: '没有多余噪音，只有干净的运行体验',
+      secondaryCta: '零额外配置的干净演示',
     },
     about: {
       badge: '关于项目',
