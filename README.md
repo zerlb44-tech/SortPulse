@@ -4,6 +4,7 @@ A polished, interactive sorting algorithm visualizer built with React, TypeScrip
 
 [![Live demo](https://img.shields.io/badge/live-demo-7c8cff?style=for-the-badge)](https://github.com/zerlb44-tech/fdsed)
 [![License: MIT](https://img.shields.io/badge/License-MIT-3ddc97?style=for-the-badge)](LICENSE)
+[![CI](https://github.com/zerlb44-tech/fdsed/actions/workflows/ci.yml/badge.svg)](https://github.com/zerlb44-tech/fdsed/actions/workflows/ci.yml)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vitejs.dev)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
@@ -49,16 +50,16 @@ Recommended assets to add before promoting the repo:
 - Node.js 18 or newer
 - npm 9 or newer
 
-### Install
+### Install once
 
 ```bash
 npm install
 ```
 
-### Development
+### Launch in one command
 
 ```bash
-npm run dev
+npm start
 ```
 
 ### Production build
@@ -66,6 +67,14 @@ npm run dev
 ```bash
 npm run build
 npm run preview
+```
+
+### One-line launch
+
+If you prefer a single shell line for first-time setup:
+
+```bash
+npm install && npm start
 ```
 
 ## Controls
@@ -101,6 +110,20 @@ src/
 
 The app now includes better page metadata and Open Graph-friendly assets so the GitHub repo and any deployed demo look more polished when shared.
 
+## Make the GitHub repo stronger
+
+The best improvements for a public repo are usually simple and visible:
+
+- A strong name and short description
+- A screenshot or GIF near the top of the README
+- A live demo link
+- A clear one-command start path
+- CI that runs lint and build on every push
+- A concise features list
+- A roadmap that shows the project is active
+- Social preview assets so the repo looks good when shared
+- Topic keywords in GitHub repository settings
+
 ## Roadmap
 
 - Add a short narrated demo clip
@@ -108,6 +131,7 @@ The app now includes better page metadata and Open Graph-friendly assets so the 
 - Add more algorithms
 - Add shareable URLs for presets
 - Capture before/after performance screenshots for mobile
+- Add more launch screenshots for README and social posts
 
 ## Contributing
 

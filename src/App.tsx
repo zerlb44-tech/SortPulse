@@ -5,6 +5,7 @@ import { Controls } from './components/Controls';
 import { AlgorithmSelector } from './components/AlgorithmSelector';
 import { StatsPanel } from './components/StatsPanel';
 import { Legend } from './components/Legend';
+import { AboutSection } from './components/AboutSection';
 import { useSort } from './hooks/useSort';
 import { useDarkMode } from './hooks/useDarkMode';
 import { useAudioFeedback } from './hooks/useAudioFeedback';
@@ -106,6 +107,8 @@ export default function App() {
             </p>
           </div>
         </section>
+
+        <AboutSection />
 
         <AlgorithmSelector value={algorithm} onChange={setAlgorithm} disabled={isPlaying} />
 

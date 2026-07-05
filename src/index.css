@@ -36,6 +36,10 @@
     color: #e5ecf6;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .light body {
     background:
       radial-gradient(circle at top, rgba(124, 140, 255, 0.1), transparent 34%),
